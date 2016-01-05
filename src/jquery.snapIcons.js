@@ -91,10 +91,10 @@
 						});
 					}
 					else {
-						this.svg.click(function() {
-							self.svg.stop();
-							self.toggle(true);
-							self.settings.onToggle();
+						$(this.el).on(this.clickEvent, function() {
+								 self.svg.stop();
+								 self.toggle(true);
+	 							 self.settings.onToggle();
 						});
 					}
 				},
