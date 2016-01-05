@@ -1,12 +1,12 @@
 {
-	"name": "jquery-boilerplate",
-	"version": "4.0.0",
-	"homepage": "http://jqueryboilerplate.com",
+	"name": "snapicons",
+	"version": "0.1.0",
+	"homepage": "http://bigstud.io",
 	"authors": [
-		"Zeno Rocha <hi@zenorocha.com>"
+		"Eric Wafford <psykel@gmail.com>"
 	],
-	"description": "A jump-start for jQuery plugins development.",
-	"main": "src/jquery.boilerplate.js",
+	"description": "A simple Jquery library for Snapsvg Icons",
+	"main": "src/jquery.snapIcons.js",
 	"keywords": [
 		"jquery",
 		"plugin",
