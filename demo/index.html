@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snap Icons</title>
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../node_modules/snapsvg/dist/snap.svg.js"></script>
+		<script src="../src/jquery.snapIcons.js"></script>
+	</head>
+	<body style="background: #eee">
+		<div><div id="element" style="display: inline-block;"></div></div>
+		<div><div id="element2" style="display: inline-block;"></div></div>
+		<script>
+			$(function() {
+				$('#element2').snapIcons({
+					url : 'nav-left-arrow.svg',
+					toggle: 'mouseover',
+					animation : [
+						{
+							el : 'path',
+							animProperties : {
+								from : { val : '{"path" : "M 48.592939,9.792208 15.407062,31.887987 48.592939,54.025974"}' },
+								to : { val : '{"path" : "M 15.407062,9.792208 48.592939,31.887987 15.407062,54.025974"}' }
+							}
+						}
+					]
+				});
+				$("#element").snapIcons({
+					url: 'menu-icon.svg',
+					animation: [
+						{
+							el : '#top',
+							animProperties : {
+								from : { val : '{"transform" : "r0 30 30"}', animAfter : '{"path": "M10,15h40"}' },
+								to : { val : '{"path": "M10,30h40"}', animAfter: '{"transform" : "r45 30 30"}' }
+							}
+						},
+						{
+							el : '#middle',
+							animProperties : {
+								from : { val : '{"transform" : "s1 1", "opacity" : 1}', before : '{"transform" : "s0 0"}', delayFactor : 1.5 },
+								to : { val : '{"opacity" : 0}' }
+							}
+						},
+						{
+							el : '#bottom',
+							animProperties : {
+			          from : { val : '{"transform" : "r0 30 30"}', animAfter : '{"path": "M10,45h40"}' },
+								to : { val : '{"path": "M10,30h40"}', animAfter: '{"transform" : "r-45 30 30"}' }
+							}
+						}
+					]
+				});
+			});
+		</script>
+	</body>
+</html>
