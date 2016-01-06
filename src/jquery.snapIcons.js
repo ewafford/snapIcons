@@ -68,7 +68,7 @@
 								self.settings.onLoad();
 								self.initEvents();
 								if( self.reverse ) {
-									self.toggle();
+									self.toggleIcon();
 								}
 							});
 						}
@@ -80,12 +80,12 @@
 						$(this.el).on({
 						   "mouseenter": function() {
 								 self.svg.stop();
-								 self.toggle(true);
+								 self.toggleIcon(true);
 	 							 self.settings.onToggle();
 							 },
 						   "mouseleave": function() {
 								 self.svg.stop();
-								 self.toggle(true);
+								 self.toggleIcon(true);
 	 							 self.settings.onToggle();
 							 }
 						});
@@ -93,14 +93,10 @@
 					else {
 						$(this.el).on(this.clickEvent, function() {
 								 self.svg.stop();
-								 self.toggle(true);
+								 self.toggleIcon(true);
 	 							 self.settings.onToggle();
 						});
 					}
-				},
-				toggleEvent: function() {
-					this.toggle(true);
-					this.settings.onToggle();
 				},
 				animateIcon: function(el, val, animProp, timeout, motion){
 					if( motion ) {
@@ -125,7 +121,7 @@
 						(navigator.MaxTouchPoints > 0) ||
 						(navigator.msMaxTouchPoints > 0));
 				},
-				toggle: function(motion) {
+				toggleIcon: function(motion) {
 					if( !this.settings.animation ) { return; }
 					for( var i = 0, len = this.settings.animation.length; i < len; ++i ) {
 						var a = this.settings.animation[ i ],
