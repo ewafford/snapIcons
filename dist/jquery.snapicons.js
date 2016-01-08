@@ -1,5 +1,5 @@
 /*
- *  snapicons - v0.1.1
+ *  snapicons - v0.1.2
  *  Jquery Plugin for Snapsvg Icons.
  *  http://bigstud.io
  *
@@ -28,7 +28,7 @@
 					animation : [],
 					speed 	  : 200,
 					easing 	  : mina.linear,
-					toggle 	  : "click", // click || mouseover
+					toggle 	  : "click", // click || mouseover || none
 					size 		  : { w : 60, h : 60 },
 					onLoad 	  : function() { return false; },
 					onToggle  : function() { return false; }
@@ -83,6 +83,9 @@
 
 				},
 				initEvents: function() {
+					if( this.settings.toggle === "none" ) {
+						return;
+					}
 					var self = this;
 					if( this.settings.toggle === "mouseover" ) {
 						$(this.el).on({
